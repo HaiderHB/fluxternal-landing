@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
-import { Sparkles } from 'lucide-react'
+import Link from 'next/link'
+import { Smartphone, Sparkles } from 'lucide-react'
 import { PageShell } from '@/components/site/page-shell'
 
 export const metadata: Metadata = {
@@ -74,6 +75,23 @@ export default function ProjectsPage() {
               </ul>
             </article>
           ))}
+
+          {/* Published apps live under /apps with their legal pages */}
+          <Link
+            href="/apps"
+            className="liquid-glass flex flex-col justify-between rounded-3xl p-8 transition-colors hover:bg-foreground/[0.03]"
+          >
+            <div>
+              <span className="flex size-12 items-center justify-center rounded-2xl bg-foreground/5 text-foreground">
+                <Smartphone className="size-6" aria-hidden="true" />
+              </span>
+              <h2 className="mt-6 text-2xl font-semibold text-foreground">Our apps</h2>
+              <p className="mt-4 leading-7 text-hero-sub opacity-80 text-pretty">
+                The mobile apps we publish, each with its support, privacy and terms pages.
+              </p>
+            </div>
+            <span className="mt-6 text-sm font-medium text-foreground/70">See all apps →</span>
+          </Link>
 
           {/* More to come placeholder */}
           <article className="flex flex-col items-center justify-center rounded-3xl border border-dashed border-foreground/15 p-8 text-center">
